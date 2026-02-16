@@ -99,3 +99,24 @@ Create a `.env` file inside `backend/`:
 ```env
 GEMINI_API_KEY=your_gemini_api_key
 GITHUB_TOKEN=your_github_personal_access_token
+-----
+
+
+Commands to Execute the Program:
+Backend:
+1. Navigate to the backend directory:
+2. Install dependencies:
+   pip install -r requirements.txt
+3. Run the FastAPI server:
+   uvicorn app.main:app --reload
+
+Frontend:
+1. Navigate to the frontend directory:
+2. Install dependencies:
+   npm install
+3. Start the React development server:
+   npm run dev  
+   ----
+The free version of Gemini API has a limit of 1000 tokens per request, which may not be sufficient for large pull requests. 
+To handle this, the system uses a ScaleDown engine that compresses the PR diff while preserving its logic and intent, 
+allowing it to fit within the token limit and still provide meaningful reviews.If the limit has beem reached the system will be notifies that the limit has been reached and the review will be skipped.
